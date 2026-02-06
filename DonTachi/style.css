@@ -1,0 +1,124 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fdfdfd;
+  color: #222;
+  line-height: 1.5;
+  padding-bottom: 3rem;
+}
+
+/* Header */
+.menu-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+}
+
+.menu-header h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.location {
+  color: #777;
+  font-weight: 300;
+}
+
+/* Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sections */
+.menu-section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+.menu-section h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
+}
+
+.menu-section ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.menu-section li {
+  padding: 0.3rem 0;
+  color: #333;
+}
+
+.sizes {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.item {
+  margin-bottom: 1rem;
+}
+
+.item p {
+  font-weight: 300;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+/* Notes */
+.note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+/* Beer Grid */
+.beer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+  .menu-header h1 {
+    font-size: 1.6rem;
+  }
+  .menu-section h2 {
+    font-size: 1.2rem;
+  }
+}
