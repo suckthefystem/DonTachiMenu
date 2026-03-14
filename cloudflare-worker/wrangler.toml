@@ -1,0 +1,11 @@
+name = "dontachi-menu-publisher"
+main = "src/index.js"
+compatibility_date = "2026-03-14"
+
+[vars]
+ALLOWED_ORIGIN = "https://suckthefystem.github.io"
+
+[[kv_namespaces]]
+binding = "MENU_KV"
+id = "b6ff923abfef4200a0a62ae574d74183"
+preview_id = "50f5c81d2ce347d895183833b141f772"

@@ -1,0 +1,108 @@
+{
+  "shop": {
+    "name": "Don Tachi Cafe",
+    "location": "Vega Alta, Puerto Rico"
+  },
+  "sections": [
+    {
+      "name": "Cafe",
+      "note": "",
+      "items": [
+        { "name": "Espresso", "price": "1.75", "details": "" },
+        { "name": "Cortado", "price": "2.00", "details": "" },
+        { "name": "Latte", "price": "", "details": "6 oz $2.75 · 8 oz $3.50 · 12 oz $4.50" },
+        { "name": "Cappuccino", "price": "", "details": "6 oz $2.75 · 8 oz $3.50 · 12 oz $4.50" },
+        { "name": "Americano", "price": "", "details": "6 oz $1.75 · 8 oz $2.00" },
+        { "name": "Mocha", "price": "", "details": "8 oz $3.75 · 12 oz $4.75" },
+        { "name": "Hot Chocolate", "price": "", "details": "8 oz $2.75 · 12 oz $3.50" },
+        { "name": "Chai Latte", "price": "", "details": "12 oz $5.50" },
+        { "name": "Matcha", "price": "", "details": "12 oz $5.50" },
+        { "name": "Iced Latte / Frozen", "price": "6.00", "details": "" }
+      ]
+    },
+    {
+      "name": "Extras",
+      "note": "",
+      "items": [
+        { "name": "Cambio de leche", "price": "0.75", "details": "" },
+        { "name": "Extra shot", "price": "0.75", "details": "" },
+        { "name": "Extra Whipped cream", "price": "0.75", "details": "" },
+        { "name": "Extra sabor", "price": "0.75", "details": "" },
+        { "name": "Extra fruta", "price": "3.25", "details": "" }
+      ]
+    },
+    {
+      "name": "Bebidas",
+      "note": "",
+      "items": [
+        { "name": "Jugo", "price": "1.90", "details": "12 oz" },
+        { "name": "Agua", "price": "1.50", "details": "" },
+        { "name": "Refresco", "price": "1.50", "details": "" },
+        { "name": "Agua soda", "price": "1.90", "details": "" },
+        { "name": "Refresher", "price": "4.50", "details": "12 oz" }
+      ]
+    },
+    {
+      "name": "Cremas / Sopas",
+      "note": "",
+      "items": [
+        { "name": "Crema del dia", "price": "3.00", "details": "12 oz" },
+        { "name": "Sopa del dia", "price": "3.50", "details": "12 oz" }
+      ]
+    },
+    {
+      "name": "Reposteria",
+      "note": "",
+      "items": [
+        { "name": "Muffin", "price": "2.49", "details": "" },
+        { "name": "Quesitos", "price": "2.49", "details": "" },
+        { "name": "Brownie & Cookie", "price": "2.49", "details": "" },
+        { "name": "Galletas", "price": "1.00", "details": "" }
+      ]
+    },
+    {
+      "name": "Almuerzo",
+      "note": "",
+      "items": [
+        { "name": "Amigo", "price": "9.99", "details": "Pan multigrano, pernil, repollo, pico de gallo, BBQ, queso Monterey, mantequilla y papas salteadas." },
+        { "name": "Y entonces...", "price": "8.99", "details": "Lasana de carne, salsa roja, queso ricotta." },
+        { "name": "Los Tantan", "price": "10.99", "details": "Nachos, pernil, pico de gallo, salsa mejicana, cilantro, sour cream, queso Monterey, aguacate (por temporada)." },
+        { "name": "Los Tachi Tacos", "price": "10.99", "details": "Pollo, cebolla encurtida, queso Monterey, repollo y cilantro." },
+        { "name": "Tu crees que no", "price": "6.50", "details": "Papas, pernil, pico de gallo, queso Monterey y cilantro." }
+      ]
+    },
+    {
+      "name": "Sandwiches",
+      "note": "Todos los sandwiches salen con chips.",
+      "items": [
+        { "name": "Clasico", "price": "6.00", "details": "Pan brioche, jamon, huevo, queso (blanco/amarillo), mantequilla." },
+        { "name": "Supremo", "price": "7.50", "details": "Pan multigrano, jamon, pavo, bacon, huevo, queso (blanco/amarillo), mantequilla." },
+        { "name": "Tachito", "price": "6.50", "details": "Waffle, jamon, huevo, queso (blanco/amarillo), sirop." },
+        { "name": "Ranchero", "price": "7.00", "details": "Revoltillo, aguacate (por temporada), salsa mejicana, queso Monterey y jamon." },
+        { "name": "Que tu dices", "price": "9.99", "details": "Pan multigrano, repollo, mayonesa, pico de gallo y queso rallado." },
+        { "name": "Mi amor", "price": "5.50", "details": "Jamon, queso blanco y amarillo, mantequilla." },
+        { "name": "Tato Special", "price": "6.50", "details": "Pan brioche, queso rallado, queso blanco y amarillo con aguacate." }
+      ]
+    },
+    {
+      "name": "Al Plato",
+      "note": "",
+      "items": [
+        { "name": "Los Fifi", "price": "9.99", "details": "Waffles (Calabaza, Chocolate Chip o regular) con frutas y Whipped Cream." },
+        { "name": "Pa' que te guste", "price": "7.99", "details": "Revoltillo, queso, jamon y tostadas." },
+        { "name": "Don Tachi", "price": "9.99", "details": "Revoltillo, queso, jamon y waffles." },
+        { "name": "Pa' que te jinque", "price": "16.99", "details": "Revoltillo, queso jamon, waffles y papas." },
+        { "name": "El Jibarito", "price": "10.99", "details": "Huevo frito, jamonilla o salchicha, amarillo y tostadas." },
+        { "name": "Dieguito", "price": "9.99", "details": "Huevo frito, jamon y waffles." }
+      ]
+    },
+    {
+      "name": "Cervezas",
+      "note": "",
+      "items": [
+        { "name": "Local", "price": "", "details": "" },
+        { "name": "Importada", "price": "", "details": "" }
+      ]
+    }
+  ]
+}

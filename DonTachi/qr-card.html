@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don Tachi QR</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --ink: #231c16;
+      --accent: #0f6a47;
+      --accent-soft: #dceadf;
+      --line: rgba(35, 28, 22, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(15, 106, 71, 0.12), transparent 40%),
+        linear-gradient(135deg, #f8f4eb, #efe5d3);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .card {
+      width: min(100%, 420px);
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 24px 70px rgba(35, 28, 22, 0.12);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 14px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 106, 71, 0.15);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      letter-spacing: 0.02em;
+    }
+
+    .sub {
+      margin: 10px 0 18px;
+      color: rgba(35, 28, 22, 0.72);
+      font-size: 0.98rem;
+    }
+
+    .qr-shell {
+      padding: 18px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff, #f1f8f4);
+      border: 1px solid rgba(15, 106, 71, 0.12);
+      box-shadow: inset 0 0 0 8px var(--accent-soft);
+    }
+
+    .qr-shell img {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .cta {
+      margin: 18px 0 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .url {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: rgba(35, 28, 22, 0.72);
+      word-break: break-word;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      color: rgba(35, 28, 22, 0.62);
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <div class="logo-wrap">
+      <img src="dtlogo.jpg" alt="Don Tachi logo">
+    </div>
+    <h1>Don Tachi Cafe</h1>
+    <p class="sub">Escanea para ver el menu</p>
+
+    <div class="qr-shell">
+      <img src="qr-code-styled.png" alt="QR code for Don Tachi menu">
+    </div>
+
+    <p class="cta">Scan Me</p>
+    <p class="url">https://suckthefystem.github.io/DonTachiMenu/</p>
+
+    <p class="footer">Perfecto para imprimir en mesa, counter o pared.</p>
+  </article>
+</body>
+</html>
