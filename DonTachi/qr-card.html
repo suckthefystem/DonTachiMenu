@@ -6,11 +6,10 @@
   <title>Don Tachi QR</title>
   <style>
     :root {
-      --paper: #f6f1e8;
-      --ink: #231c16;
-      --accent: #0f6a47;
-      --accent-soft: #dceadf;
-      --line: rgba(35, 28, 22, 0.12);
+      --paper: #ffffff;
+      --ink: #0f0f0f;
+      --soft-ink: #555555;
+      --line: #d9d9d9;
     }
 
     * {
@@ -19,128 +18,152 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background:
-        radial-gradient(circle at top, rgba(15, 106, 71, 0.12), transparent 40%),
-        linear-gradient(135deg, #f8f4eb, #efe5d3);
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    .card {
-      width: min(100%, 420px);
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 24px 70px rgba(35, 28, 22, 0.12);
-      text-align: center;
-      backdrop-filter: blur(8px);
-    }
-
-    .logo-wrap {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 14px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(15, 106, 71, 0.15);
-      background: #fff;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 28px;
+      background: #f2f2f2;
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
-    .logo-wrap img {
+    .sheet {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      max-width: 980px;
+      display: flex;
+      justify-content: center;
     }
 
-    h1 {
+    .table-card {
+      width: min(100%, 360px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      display: grid;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .brand h1 {
       margin: 0;
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      letter-spacing: 0.02em;
+      font-size: 1.3rem;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
     }
 
-    .sub {
-      margin: 10px 0 18px;
-      color: rgba(35, 28, 22, 0.72);
-      font-size: 0.98rem;
+    .headline {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .qr-shell {
-      padding: 18px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, #ffffff, #f1f8f4);
-      border: 1px solid rgba(15, 106, 71, 0.12);
-      box-shadow: inset 0 0 0 8px var(--accent-soft);
+    .subhead {
+      margin: 0;
+      color: var(--soft-ink);
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
     }
 
-    .qr-shell img {
+    .qr-wrap {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    .qr-wrap img {
       display: block;
       width: 100%;
-      border-radius: 16px;
-      background: #fff;
+      border-radius: 10px;
+      background: #ffffff;
     }
 
-    .cta {
-      margin: 18px 0 8px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--accent);
+    .help {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--soft-ink);
+    }
+
+    .url-label {
+      margin: 2px 0 0;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
+      color: var(--soft-ink);
     }
 
     .url {
       margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: rgba(35, 28, 22, 0.72);
+      font-size: 0.78rem;
+      color: var(--soft-ink);
       word-break: break-word;
+      line-height: 1.35;
     }
 
-    .footer {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-size: 0.84rem;
-      color: rgba(35, 28, 22, 0.62);
+    .print-note {
+      margin: 6px 0 0;
+      font-size: 0.72rem;
+      color: var(--soft-ink);
     }
 
     @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
       body {
         background: #fff;
         padding: 0;
       }
 
-      .card {
+      .table-card {
         box-shadow: none;
-        border: 1px solid #ddd;
+        border-color: #cfcfcf;
       }
     }
   </style>
 </head>
 <body>
-  <article class="card">
-    <div class="logo-wrap">
-      <img src="dtlogo.jpg" alt="Don Tachi logo">
-    </div>
-    <h1>Don Tachi Cafe</h1>
-    <p class="sub">Escanea para ver el menu</p>
+  <main class="sheet">
+    <article class="table-card">
+      <div class="brand">
+        <img src="dtlogo.jpg" alt="Don Tachi logo">
+        <h1>Don Tachi Cafe</h1>
+      </div>
 
-    <div class="qr-shell">
-      <img src="qr-code-styled.png" alt="QR code for Don Tachi menu">
-    </div>
+      <p class="headline">Scan to view menu</p>
+      <p class="subhead">Escanea para ver el menu</p>
 
-    <p class="cta">Scan Me</p>
-    <p class="url">https://suckthefystem.github.io/DonTachiMenu/</p>
+      <div class="qr-wrap">
+        <img src="qr-code-styled.png" alt="QR code for Don Tachi menu">
+      </div>
 
-    <p class="footer">Perfecto para imprimir en mesa, counter o pared.</p>
-  </article>
+      <p class="help">Open camera, scan QR, and choose your order.</p>
+      <p class="url-label">Menu URL</p>
+      <p class="url">https://suckthefystem.github.io/DonTachiMenu/</p>
+      <p class="print-note">Print tip: use 100% scale and thick paper for tables.</p>
+    </article>
+  </main>
 </body>
 </html>
