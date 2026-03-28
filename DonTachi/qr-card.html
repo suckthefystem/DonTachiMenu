@@ -105,22 +105,6 @@
       color: var(--soft-ink);
     }
 
-    .url-label {
-      margin: 2px 0 0;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--soft-ink);
-    }
-
-    .url {
-      margin: 0;
-      font-size: 0.78rem;
-      color: var(--soft-ink);
-      word-break: break-word;
-      line-height: 1.35;
-    }
-
     .print-note {
       margin: 6px 0 0;
       font-size: 0.72rem;
@@ -191,8 +175,6 @@
       </div>
 
       <p class="help">Open camera, scan QR, and choose your order.</p>
-      <p class="url-label">Menu URL</p>
-      <p id="menu-url" class="url"></p>
       <p class="print-note">Print tip: use 100% scale and thick paper for tables.</p>
 
       <div class="download-bar">
@@ -206,14 +188,12 @@
   <script>
     const MENU_URL = 'https://suckthefystem.github.io/DonTachiMenu/DonTachi/';
     const qrImage = document.getElementById('qr-image');
-    const menuUrlText = document.getElementById('menu-url');
-
-    menuUrlText.textContent = MENU_URL;
     qrImage.src = 'https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&format=png&margin=0&ecc=M&data=' + encodeURIComponent(MENU_URL);
 
     document.getElementById('btn-png').addEventListener('click', async function () {
       // Render QR image to black using an offscreen canvas (CSS filters are ignored by html2canvas)
       const qrImg = document.querySelector('.qr-wrap img');
+      const downloadBar = document.querySelector('.download-bar');
       const offscreen = document.createElement('canvas');
       offscreen.width = qrImg.naturalWidth;
       offscreen.height = qrImg.naturalHeight;
@@ -224,22 +204,28 @@
 
       // Temporarily swap src so html2canvas picks up the black version
       const origSrc = qrImg.src;
+      const originalDisplay = downloadBar.style.display;
       qrImg.src = blackQrDataUrl;
       await new Promise(r => { qrImg.onload = r; });
 
-      const card = document.querySelector('.table-card');
-      const canvas = await html2canvas(card, {
-        backgroundColor: '#ffffff',
-        scale: 3,
-        useCORS: true
-      });
+      try {
+        downloadBar.style.display = 'none';
 
-      qrImg.src = origSrc;
+        const card = document.querySelector('.table-card');
+        const canvas = await html2canvas(card, {
+          backgroundColor: '#ffffff',
+          scale: 3,
+          useCORS: true
+        });
 
-      const link = document.createElement('a');
-      link.download = 'don-tachi-qr.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
+        const link = document.createElement('a');
+        link.download = 'don-tachi-qr.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } finally {
+        qrImg.src = origSrc;
+        downloadBar.style.display = originalDisplay;
+      }
     });
   </script>
 </body>
