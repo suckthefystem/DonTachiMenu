@@ -91,12 +91,12 @@
       background: #ffffff;
     }
 
-    .qr-wrap img,
-    .qr-wrap canvas {
+    .qr-wrap img {
       display: block;
       width: 100%;
       border-radius: 10px;
       background: #ffffff;
+      filter: grayscale(1) contrast(1000%);
     }
 
     .help {
@@ -187,12 +187,12 @@
       <p class="subhead">Escanea para ver el menu</p>
 
       <div class="qr-wrap">
-        <div id="qr-code" role="img" aria-label="QR code for Don Tachi menu"></div>
+        <img id="qr-image" crossorigin="anonymous" src="" alt="QR code for Don Tachi menu">
       </div>
 
       <p class="help">Open camera, scan QR, and choose your order.</p>
       <p class="url-label">Menu URL</p>
-      <p class="url" id="menu-url"></p>
+      <p id="menu-url" class="url"></p>
       <p class="print-note">Print tip: use 100% scale and thick paper for tables.</p>
 
       <div class="download-bar">
@@ -202,28 +202,39 @@
     </article>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
+    const MENU_URL = 'https://suckthefystem.github.io/DonTachiMenu/DonTachi/';
+    const qrImage = document.getElementById('qr-image');
+    const menuUrlText = document.getElementById('menu-url');
 
-    document.getElementById('menu-url').textContent = MENU_URL;
-
-    new QRCode(document.getElementById('qr-code'), {
-      text: MENU_URL,
-      width: 900,
-      height: 900,
-      colorDark: '#000000',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.H
-    });
+    menuUrlText.textContent = MENU_URL;
+    qrImage.src = 'https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&format=png&margin=0&ecc=M&data=' + encodeURIComponent(MENU_URL);
 
     document.getElementById('btn-png').addEventListener('click', async function () {
+      // Render QR image to black using an offscreen canvas (CSS filters are ignored by html2canvas)
+      const qrImg = document.querySelector('.qr-wrap img');
+      const offscreen = document.createElement('canvas');
+      offscreen.width = qrImg.naturalWidth;
+      offscreen.height = qrImg.naturalHeight;
+      const ctx2 = offscreen.getContext('2d');
+      ctx2.filter = 'grayscale(1) contrast(1000%)';
+      ctx2.drawImage(qrImg, 0, 0);
+      const blackQrDataUrl = offscreen.toDataURL();
+
+      // Temporarily swap src so html2canvas picks up the black version
+      const origSrc = qrImg.src;
+      qrImg.src = blackQrDataUrl;
+      await new Promise(r => { qrImg.onload = r; });
+
       const card = document.querySelector('.table-card');
       const canvas = await html2canvas(card, {
         backgroundColor: '#ffffff',
         scale: 3,
         useCORS: true
       });
+
+      qrImg.src = origSrc;
 
       const link = document.createElement('a');
       link.download = 'don-tachi-qr.png';
