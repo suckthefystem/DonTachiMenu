@@ -9,7 +9,8 @@ https://suckthefystem.github.io/DonTachiMenu/
 - GitHub Pages workflow at `.github/workflows/deploy-pages.yml`
 - Site files deployed from the `DonTachi/` folder
 - QR image at `DonTachi/qr-code-styled.png`
-- Printable QR card at `DonTachi/qr-card.html`
+- Canonical QR page at `DonTachi/qr/index.html`
+- Legacy `DonTachi/qr-card.html` now redirects to `DonTachi/qr/`
 - Owner editor in `DonTachi/owner-editor.html`
 - Free publish backend in `cloudflare-worker/`
 - Publish config in `DonTachi/publish-config.json`
